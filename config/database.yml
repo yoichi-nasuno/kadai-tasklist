@@ -47,8 +47,21 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+# 以下、herokuに登録する処理に設定変更する記述
+
+#　これはcloud9用
+# production:
+#   <<: *default
+#   database: tasklist_production
+#   username: tasklist
+#   password: <%= ENV['TASKLIST_DATABASE_PASSWORD'] %>
+
+#　これはheroku用
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: tasklist_production
   username: tasklist
   password: <%= ENV['TASKLIST_DATABASE_PASSWORD'] %>
