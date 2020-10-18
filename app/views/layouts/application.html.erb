@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <title>Tasklist</title>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tasklists</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,8 +12,11 @@
   </head>
 
   <body>
+    <p> came to tasks/index</p>
+    <%= render 'layouts/navbar' %>
     <%= render 'layouts/flash_messages' %>
     
-    <%= yield %>
+    <%=  yield %>
+    <a>yield done at views/layouts/applocaation</a>
   </body>
 </html>
