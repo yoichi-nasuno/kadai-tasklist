@@ -1,0 +1,15 @@
+<ul class="list-unstyled">
+  <% tasks.each do |t| %>
+    <li class="media mb-3">
+      <div class="media-body">
+        <div>
+          <%= link_to t.user.name, user_path(t.user) %> <span class="text-muted">posted at <%= t.created_at %></span>
+        </div>
+        <div>
+          <p><%= t.content %></p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate microposts %>
+</ul>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'toppages#index'
+  root to: 'tasks#index'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'tasks#index'
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :new, :create]
-
+  resources :tasks, only: [:create, :destroy]
 end
