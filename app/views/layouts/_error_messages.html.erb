@@ -1,7 +1,5 @@
 
-<a>Came to layout/_error_messages.html.erb</a>
 <% if model.errors.any? %>
-  <a>Strong-Error occured.</a>
   <div>
     <ul>
       <% model.errors.full_messages.each do |message| %>
@@ -10,6 +8,4 @@
     </ul>
   </div>
 <% else %>
-  <a>error wasn't occured at task input. </a>
 <% end %>
-<a>came to error_messages.html.erb. </a>

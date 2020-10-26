@@ -1,17 +1,6 @@
 <%= form_with(model: message, local: true) do |f| %>
   <a>came to task input process.</a>
         
-  <% if message.errors.any? %>
-    <div id="error_explanation">
-      <a>came to _form.html.erb means error occured</a>
-  
-      <ul>
-        <% message.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <%= f.label :status, 'ステイタス' %>
   <%= f.text_field :status %>

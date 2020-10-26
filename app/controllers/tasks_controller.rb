@@ -3,7 +3,7 @@ class TasksController < ApplicationController
     before_action :correct_user, only: [:destroy]
     
   def index
-    @task = Task.all
+    @task = Task.all.page(params[:page]).per(15)
   end 
 
   def show
@@ -22,7 +22,7 @@ class TasksController < ApplicationController
     else
       @tasks = current_user.tasks.order(id: :desc).page(params[:page]).page(10)
       flash.now[:danger] = 'タスクの登録に失敗しました。'
-      render 'toppages/index'
+      render :new
     end
   end
 
