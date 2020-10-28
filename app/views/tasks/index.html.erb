@@ -11,11 +11,5 @@
     <% end %>
     <%= paginate @task %>
   </ul>
-  
   <%= link_to '新規タスクの登録', new_task_path %>
-<% else %>
-    <div class="text-center">
-      <h1>Welcome to the Tasklists NOT logged-in</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
-    </div>
 <% end %>
