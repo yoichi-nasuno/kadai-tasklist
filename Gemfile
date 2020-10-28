@@ -58,3 +58,4 @@ end
 
 # pagination kai-page
 gem 'kaminari'
+

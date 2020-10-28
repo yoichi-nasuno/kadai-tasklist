@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
     before_action :require_user_logged_in
-    before_action :correct_user, only: [:edit, :update, :create, :destroy]
+    before_action :correct_user, only: [:edit, :update, :show, :destroy]
     
   def index
     @task = Task.all.page(params[:page]).per(15)
@@ -20,7 +20,7 @@ class TasksController < ApplicationController
       flash[:success] = 'タスクを登録しました。'
       redirect_to root_url
     else
-      @tasks = current_user.tasks.order(id: :desc).page(params[:page]).page(10)
+      
       flash.now[:danger] = 'タスクの登録に失敗しました。'
       render :new
     end
