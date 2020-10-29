@@ -2,11 +2,13 @@
 <% if logged_in? %>
   <ul>
     <% @task.each do |task| %>
+    
       
         <li><%= link_to task.id, task %> : <%= task.status %>:<%= task.content %></li>
           <span class="text-muted">登録日<%= task.created_at %></span>
         <%= link_to "Delete", task, method: :delete, data: { confirm: "You sure?" } %>
-      
+        
+  
     <% end %>
     <%= paginate @task %>
   </ul>
