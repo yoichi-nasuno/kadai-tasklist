@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
 
-  # before_action :require_user_logged_in, only: [:index, :show]
    before_action :require_user_logged_in, only: :show
-  
-  # def index
-  #   redirect_to root_url
-  # end
 
   def show
     redirect_to root_url
@@ -19,10 +14,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = 'ユーザを登録しました。'
+      # flash[:success] = 'ユーザを登録しました。'
       redirect_to @user
     else
-      flash.now[:danger] = 'ユーザの登録に失敗しました。'
+      # flash.now[:danger] = 'ユーザの登録に失敗しました。'
       render :new
     end
   end
