@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
 
-   before_action :require_user_logged_in, only: [:index, :show]
-   
-  def index
-    redirect_to root_url
-  end
+  # before_action :require_user_logged_in, only: [:index, :show]
+   before_action :require_user_logged_in, only: :show
+  
+  # def index
+  #   redirect_to root_url
+  # end
 
   def show
     redirect_to root_url
