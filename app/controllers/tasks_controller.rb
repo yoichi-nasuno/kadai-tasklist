@@ -4,7 +4,6 @@ class TasksController < ApplicationController
     
   def index
     @task = current_user.tasks.order(id: :desc).page(params[:page]).per(15)
-    # @task = Task.all.page(params[:page]).per(15)
   end 
 
   def show
